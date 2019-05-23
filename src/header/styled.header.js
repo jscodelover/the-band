@@ -1,0 +1,65 @@
+import styled from "styled-components";
+import theme from "../styles/themes";
+
+const StyleHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0px 140px
+  height: 85vh;
+  background-color: ${theme.colors.primaryColor};
+  text-align: center;
+`;
+
+const Image = styled.div`
+  position: relative;
+  height: 100%;
+  .image {
+    height: 86.5vh;
+  }
+  .image-text {
+    position: absolute;
+    right: 36px;
+    bottom: 78px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 80px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 700;
+    line-height: 78px;
+    letter-spacing: -6px;
+    text-transform: uppercase;
+    & > * {
+      vertical-align: bottom;
+    }
+    &--1 {
+      color: ${theme.colors.textColorLight};
+    }
+    &--2 {
+      color: ${theme.colors.textColorDark};
+    }
+  }
+`;
+
+const Text = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  font-family: "Inconsolata";
+  .heading {
+    font-family: "Avenir", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    vertical-align: top;
+    margin-bottom: 20px;
+  }
+  p {
+    text-align: justify;
+  }
+`;
+
+export { StyleHeader, Image, Text };

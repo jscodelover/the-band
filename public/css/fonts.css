@@ -1,3 +1,28 @@
+/* inconsolata-regular - latin */
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/inconsolata-v17-latin-regular.eot'); 
+  src: url('fonts/inconsolata-v17-latin-regular.eot?#iefix') format('embedded-opentype'), 
+       url('fonts/inconsolata-v17-latin-regular.woff2') format('woff2'), 
+       url('fonts/inconsolata-v17-latin-regular.woff') format('woff'), 
+       url('fonts/inconsolata-v17-latin-regular.ttf') format('truetype'),
+       url('fonts/inconsolata-v17-latin-regular.svg#Inconsolata') format('svg');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-weight: 700;
+  src: url('fonts/roboto-mono-v6-latin-700.eot?#iefix');
+  src: url('fonts/roboto-mono-v6-latin-700.eot?#iefix')
+      format('eot'),
+    url('fonts/roboto-mono-v6-latin-700.woff2') format('woff2'),
+    url('fonts/roboto-mono-v6-latin-700.woff') format('woff'),
+    url('fonts/roboto-mono-v6-latin-700.ttf') format('truetype'),
+    url('fonts/roboto-mono-v6-latin-700.svg#RobotoMono') format('svg');
+}
+
 @font-face {
   font-family: 'Avenir';
   font-weight: 100;
