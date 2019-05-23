@@ -10,6 +10,11 @@ const StyleHeader = styled.div`
   height: 85vh;
   background-color: ${theme.colors.primaryColor};
   text-align: center;
+  @media(max-width: 998px){
+      flex-direction: column;
+      height: auto;
+      padding: 0px 40px;
+  }
 `;
 
 const Image = styled.div`
@@ -31,9 +36,6 @@ const Image = styled.div`
     line-height: 78px;
     letter-spacing: -6px;
     text-transform: uppercase;
-    & > * {
-      vertical-align: bottom;
-    }
     &--1 {
       color: ${theme.colors.textColorLight};
     }
@@ -56,6 +58,9 @@ const Text = styled.div`
     font-weight: 600;
     vertical-align: top;
     margin-bottom: 20px;
+    @media (max-width: 998px) {
+      margin-top: 20px;
+    }
   }
   p {
     text-align: justify;

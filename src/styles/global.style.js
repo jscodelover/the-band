@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     *,
@@ -24,13 +24,13 @@ const GlobalStyle = createGlobalStyle`
         Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         line-height: 1.414;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 16px;
         color: ${({ theme: { colors } }) => colors.black};
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-size-adjust: auto;
     }
 
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;
