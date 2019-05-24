@@ -24,6 +24,9 @@ const Image = styled.div`
   height: 100%;
   .image {
     height: 86.5vh;
+    @media (max-width: 568px) {
+      height: 56vh;
+    }
   }
   .image-text {
     position: absolute;
@@ -44,6 +47,13 @@ const Image = styled.div`
     &--2 {
       color: ${theme.colors.textColorDark};
     }
+    @media (max-width: 568px) {
+      right: 34px;
+      bottom: 62px;
+      font-size: 40px;
+      line-height: 44px;
+      letter-spacing: 0;
+    }
   }
 `;
 
@@ -63,9 +73,14 @@ const Text = styled.div`
     @media (max-width: 998px) {
       margin-top: 20px;
     }
-  }
+    @media (max-width: 568px) {
+      font-size: 28px;
+    }
   p {
     text-align: justify;
+    @media (max-width: 568px) {
+      font-size: 15.5px;
+    }
   }
 
   @media (max-width: 998px) {
