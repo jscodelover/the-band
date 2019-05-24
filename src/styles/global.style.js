@@ -25,7 +25,8 @@ const GlobalStyle = createGlobalStyle`
         line-height: 1.414;
         font-weight: 400;
         font-size: 16px;
-        color: ${({ theme: { colors } }) => colors.black};
+        background-color: #f8f8f8;
+        color: ${({ theme: { colors } }) => colors.textColorDark};
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-size-adjust: auto;
