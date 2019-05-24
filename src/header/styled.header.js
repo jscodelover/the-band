@@ -6,14 +6,16 @@ const StyleHeader = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  padding: 0px 140px
+  padding: 0px 140px;
+  padding-top: 67px;
   height: 85vh;
+  box-sizing: content-box;
   background-color: ${theme.colors.primaryColor};
   text-align: center;
-  @media(max-width: 998px){
-      flex-direction: column;
-      height: auto;
-      padding: 0px 40px;
+  @media (max-width: 998px) {
+    flex-direction: column;
+    height: auto;
+    padding: 0px 40px;
   }
 `;
 
@@ -64,6 +66,10 @@ const Text = styled.div`
   }
   p {
     text-align: justify;
+  }
+
+  @media (max-width: 998px) {
+    margin-bottom: 43px;
   }
 `;
 
