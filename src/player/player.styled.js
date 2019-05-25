@@ -8,12 +8,15 @@ const StylePlayer = styled.div`
   flex-direction: row;
   justify-content: center;
   @media (max-width: 1032px) {
-    padding: 0px;
+    padding: 0;
   }
   @media (max-width: 998px) {
     padding: 0px 70px;
     flex-direction: column;
     margin-bottom: 40px;
+  }
+  @media (max-width: 568px) {
+    padding: 0;
   }
 `;
 
@@ -49,8 +52,9 @@ const AudioPlayer = styled.div`
       height: 6px;
       background: #e4dfdb;
       border-radius: 2px;
+      transition: 0.2s all;
       div {
-        width: 4px;
+        width: ${props => props.width};
         height: 6px;
         margin-top: 1px;
         background: #826c61;
@@ -63,7 +67,7 @@ const AudioPlayer = styled.div`
       margin-bottom: 15px;
       display: flex;
       justify-content: center;
-      svg:nth-child(2) {
+      button:nth-child(2) {
         margin-left: 30px;
         margin-right: 30px;
       }
@@ -125,8 +129,6 @@ const AudioPlayer = styled.div`
       x: 0px;
       y: 0px;
       enable-background: new 0 0 25 25;
-      position: absolute;
-      margin-left: -38px;
       cursor: pointer;
 
       rect {
@@ -144,6 +146,10 @@ const AudioPlayer = styled.div`
       cursor: pointer;
     }
   }
+  @media (max-width: 568px) {
+    margin: 0;
+    padding: 0 57px;
+  }
 `;
 
 const Title = styled.div`
@@ -154,4 +160,10 @@ const Title = styled.div`
   }
 `;
 
-export { StylePlayer, Image, AudioPlayer, Title };
+const Button = styled.button`
+  background-color: transparent;
+  outline: none;
+  border: none;
+`;
+
+export { StylePlayer, Image, AudioPlayer, Title, Button };
