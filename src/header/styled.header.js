@@ -6,7 +6,7 @@ const StyleHeader = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  padding: 0px 140px;
+  padding: 0px 10%;
   padding-top: 67px;
   height: 85vh;
   box-sizing: content-box;
