@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Heading } from "../components";
 import { StylePlayer, Image, AudioPlayer, Title, Button } from "./player.styled";
 
 function Player() {
@@ -40,7 +41,7 @@ function Player() {
         <img className="image" src={`${process.env.PUBLIC_URL}/img/cd.png`} alt="cd" />
       </Image>
       <AudioPlayer width={`${progressBar}px`}>
-        <div className="heading">Now playing</div>
+        <Heading className="heading">Now playing</Heading>
         <Title>
           <div>Surprise without flaws</div>
           <div className="sub-title">01. Clouds in the forest</div>

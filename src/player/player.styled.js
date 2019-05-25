@@ -41,9 +41,6 @@ const AudioPlayer = styled.div`
   width: 100%;
   .heading {
     margin-bottom: 18px;
-    font-family: "Roboto Mono";
-    font-size: 25px;
-    font-weight: 700;
   }
   .audio {
     text-algn: center;
