@@ -47,14 +47,14 @@ const AudioPlayer = styled.div`
     .slider {
       width: 100%;
       height: 6px;
-      background: #e4dfdb;
+      background: ${theme.colors.lightBrown};
       border-radius: 2px;
       transition: 0.2s all;
       div {
         width: ${props => props.width};
         height: 6px;
         margin-top: 1px;
-        background: #826c61;
+        background: ${theme.colors.darkBrown};
         border-radius: 2px;
       }
     }
@@ -77,12 +77,12 @@ const AudioPlayer = styled.div`
       enable-background: new 0 0 25 25;
 
       g {
-        stroke: #e4dfdb;
+        stroke: ${theme.colors.lightBrown};
         stroke-width: 1;
         stroke-miterlimit: 10;
 
         path {
-          fill: #e4dfdb;
+          fill: ${theme.colors.lightBrown};
         }
       }
     }
@@ -90,11 +90,11 @@ const AudioPlayer = styled.div`
     .play:hover {
       cursor: pointer;
       g {
-        stroke: #826c61;
+        stroke: ${theme.colors.darkBrown};
         cursor: pointer;
 
         path {
-          fill: #826c61;
+          fill: ${theme.colors.darkBrown};
           cursor: pointer;
         }
       }
@@ -107,7 +107,7 @@ const AudioPlayer = styled.div`
       margin-bottom: 5px;
 
       g polygon {
-        fill: #e4dfdb;
+        fill: ${theme.colors.lightBrown};
       }
     }
 
@@ -118,7 +118,7 @@ const AudioPlayer = styled.div`
       margin-bottom: 5px;
 
       g polygon {
-        fill: #e4dfdb;
+        fill: ${theme.colors.lightBrown};
       }
     }
 
@@ -129,17 +129,17 @@ const AudioPlayer = styled.div`
       cursor: pointer;
 
       rect {
-        fill: #e4dfdb;
+        fill: ${theme.colors.lightBrown};
       }
     }
 
     .pause:hover rect {
-      fill: #826c61;
+      fill: ${theme.colors.darkBrown};
     }
 
     .step-backward g polygon:hover,
     .step-foreward g polygon:hover {
-      fill: #826c61;
+      fill: ${theme.colors.darkBrown};
       cursor: pointer;
     }
   }
@@ -152,6 +152,7 @@ const AudioPlayer = styled.div`
 const Title = styled.div`
   text-transform: capitalize;
   .sub-title {
+    font-family: "Dancing Script";
     font-size: 13px;
     color: ${theme.colors.textColorLight};
   }

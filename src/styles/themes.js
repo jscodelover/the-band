@@ -4,7 +4,9 @@ const colors = {
   grey: "#9e9e9e",
   primaryColor: "#eee8e5",
   textColorLight: "#816b62",
-  textColorDark: "#261c18"
+  textColorDark: "#261c18",
+  lightBrown: "#e4dfdb",
+  darkBrown: "#826c61"
 };
 
 export default {
