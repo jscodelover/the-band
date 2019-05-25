@@ -30,7 +30,8 @@ const Image = styled.div`
       width: 480px;
     }
     @media (max-width: 998px) {
-      width: 100%;
+      width: calc(100% - -37px);
+      margin-left: -27px;
     }
   }
 `;

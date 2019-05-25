@@ -14,13 +14,25 @@ const StyleTrack = styled.div`
     .heading {
       margin-bottom: 18px;
     }
+    @media (max-width: 998px) {
+      margin-top: 30px;
+      margin-right: 0;
+      width: 100%;
+    }
   }
   .songList {
     width: 90%;
     text-transform: capitalize;
     .main-title {
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
+    @media (max-width: 998px) {
+      width: 100%;
+    }
+  }
+  @media (max-width: 998px) {
+    flex-direction: column-reverse;
+    padding: 0px 28px;
   }
 `;
 
@@ -67,6 +79,9 @@ const Button = styled.button.attrs({
   height: 23px;
   cursor: pointer;
   text-transform: uppercase;
+  &:last-child {
+    margin-right: 0;
+  }
 `;
 
 const SongList = styled.div`

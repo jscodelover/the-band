@@ -15,7 +15,7 @@ const StyleHeader = styled.div`
   @media (max-width: 998px) {
     flex-direction: column;
     height: auto;
-    padding: 0px 40px;
+    padding: 0px 40px 20px 40px;
   }
 `;
 
