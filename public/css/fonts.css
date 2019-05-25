@@ -1,4 +1,17 @@
-/* inconsolata-regular - latin */
+
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/dancing-script-v10-latin-regular.eot'); 
+  src: local('Dancing Script Regular'), local('DancingScript-Regular'),
+       url('fonts/dancing-script-v10-latin-regular.eot?#iefix') format('embedded-opentype'), 
+       url('fonts/dancing-script-v10-latin-regular.woff2') format('woff2'), 
+       url('fonts/dancing-script-v10-latin-regular.woff') format('woff'), 
+       url('fonts/dancing-script-v10-latin-regular.ttf') format('truetype'), 
+       url('fonts/dancing-script-v10-latin-regular.svg#DancingScript') format('svg'); 
+}
+
 @font-face {
   font-family: 'Inconsolata';
   font-style: normal;
