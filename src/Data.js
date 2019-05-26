@@ -1,19 +1,4 @@
-export const album = [
-  {
-    name: "carefree",
-    id: 0
-  },
-  {
-    name: "childhood",
-    id: 1
-  },
-  {
-    name: "dance and pop",
-    id: 2
-  }
-];
-
-export const albumDetail = [
+export const data = [
   {
     id: 0,
     albumName: "carefree",
