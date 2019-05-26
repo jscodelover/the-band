@@ -5,31 +5,38 @@ import { StylePlayer, Image, AudioPlayer, Title } from "./player.styled";
 function Player(props) {
   let [music, setMusic] = useState("play");
   let [progressBar, setProgressBar] = useState(4);
+  let [first, setFirst] = useState(true);
 
   let audioRef = useRef();
   let sliderRef = useRef();
 
   useEffect(() => {
-    audioRef.current.currentTime = 0;
-    audioRef.current.load();
-    setMusic("pause");
-    audioRef.current.play();
-  }, [props.trackId]);
+    if (!first) {
+      console.log("dk");
+      audioRef.current.currentTime = 0;
+      audioRef.current.load();
+      setMusic("pause");
+      audioRef.current.play();
+    }
+  }, [first, props.trackId]);
 
   useEffect(() => {
+    console.log("first");
     audioRef.current.addEventListener("timeupdate", e => {
+      if (first) setFirst(false);
       const track = Math.floor(
         sliderRef.current.offsetWidth * (e.target.currentTime / e.target.duration)
       );
       if (track === sliderRef.current.offsetWidth) {
         audioRef.current.currentTime = 0;
         setMusic("play");
-      } else setProgressBar(track);
+      } else if (!track) setProgressBar(0);
+      else setProgressBar(track);
     });
     return () => {
       audioRef.current.removeEventListener("timeupdate", () => {});
     };
-  }, []);
+  }, [first]);
 
   const handleMusicPlay = option => {
     if (option === "play") {

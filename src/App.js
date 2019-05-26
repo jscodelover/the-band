@@ -11,29 +11,26 @@ function App(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
-    <div>
-      {props.albums.length && (
-        <>
-          <Header
-            track={props.currentAlbum.tracks.find(track => track.id === props.currentTrack)}
-          />
-          <Player
-            trackId={props.currentTrack}
-            currentAlbum={props.currentAlbum}
-            changeTrack={id => props.getCurrentTrack(id)}
-          />
-          <Track
-            changeAlbum={id => props.getCurrentAlbum(id)}
-            trackId={props.currentTrack}
-            albums={props.albums}
-            currentAlbum={props.currentAlbum}
-            changeTrack={id => props.getCurrentTrack(id)}
-          />
-        </>
-      )}
-    </div>
-  );
+  if (props.albums.length) {
+    return (
+      <div>
+        <Header track={props.currentAlbum.tracks.find(track => track.id === props.currentTrack)} />
+        <Player
+          trackId={props.currentTrack}
+          currentAlbum={props.currentAlbum}
+          changeTrack={id => props.getCurrentTrack(id)}
+        />
+        <Track
+          changeAlbum={id => props.getCurrentAlbum(id)}
+          trackId={props.currentTrack}
+          albums={props.albums}
+          currentAlbum={props.currentAlbum}
+          changeTrack={id => props.getCurrentTrack(id)}
+        />
+      </div>
+    );
+  }
+  return <div>Loading...</div>;
 }
 
 function mapStateToProps(state) {
