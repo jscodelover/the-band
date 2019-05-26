@@ -60,6 +60,16 @@ const Album = styled.div`
     border-radius: 50%;
     background-color: ${theme.colors.lightBrown};
   }
+
+  .btn {
+    width: 63px;
+    height: 23px;
+    cursor: pointer;
+    text-transform: uppercase;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
   .light {
     color: ${theme.colors.darkBrown};
     background-color: ${theme.colors.lightBrown};
@@ -67,20 +77,6 @@ const Album = styled.div`
   .dark {
     color: ${theme.colors.lightBrown};
     background-color: ${theme.colors.darkBrown};
-  }
-`;
-
-const Button = styled.button.attrs({
-  className: props => props.className
-})`
-  outline: none;
-  border: none;
-  width: 63px;
-  height: 23px;
-  cursor: pointer;
-  text-transform: uppercase;
-  &:last-child {
-    margin-right: 0;
   }
 `;
 
@@ -100,6 +96,12 @@ const SongList = styled.div`
       fill: ${theme.colors.lightBrown};
       margin-right: 9px;
     }
+    .active {
+      fill: ${theme.colors.textColorLight};
+    }
+    .btnTrack {
+      color: inherit;
+    }
   }
   .time {
     display: flex;
@@ -115,4 +117,4 @@ const SongList = styled.div`
   }
 `;
 
-export { StyleTrack, Album, SongList, Button };
+export { StyleTrack, Album, SongList };

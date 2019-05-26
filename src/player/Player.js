@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Heading } from "../components";
-import { StylePlayer, Image, AudioPlayer, Title, Button } from "./player.styled";
+import { Heading, Button } from "../components";
+import { StylePlayer, Image, AudioPlayer, Title } from "./player.styled";
 
-function Player() {
+function Player(props) {
   let [music, setMusic] = useState("play");
   let [progressBar, setProgressBar] = useState(4);
 
@@ -20,13 +20,18 @@ function Player() {
   };
 
   useEffect(() => {
+    audioRef.current.currentTime = 0;
+    audioRef.current.load();
+    setMusic("pause");
+    audioRef.current.play();
+  }, [props.trackId]);
+
+  useEffect(() => {
     audioRef.current.addEventListener("timeupdate", e => {
       const track = Math.floor(
         sliderRef.current.offsetWidth * (e.target.currentTime / e.target.duration)
       );
-      if (progressBar + 1 === sliderRef.current.offsetWidth) {
-        console.log("SFs");
-        setProgressBar(4);
+      if (track === sliderRef.current.offsetWidth) {
         audioRef.current.currentTime = 0;
         setMusic("play");
       } else setProgressBar(track);
@@ -34,7 +39,11 @@ function Player() {
     return () => {
       audioRef.current.removeEventListener("timeupdate", () => {});
     };
-  });
+  }, []);
+
+  const { trackId, currentAlbum } = props;
+  const index = currentAlbum.tracks.findIndex(track => track.id === trackId);
+  const track = currentAlbum.tracks[index];
   return (
     <StylePlayer>
       <Image>
@@ -43,19 +52,14 @@ function Player() {
       <AudioPlayer width={`${progressBar}px`}>
         <Heading className="heading">Now playing</Heading>
         <Title>
-          <div>Surprise without flaws</div>
-          <div className="sub-title">01. Clouds in the forest</div>
+          <div>{currentAlbum.albumName}</div>
+          <div className="sub-title">
+            {`${index + 1 < 10 ? `0${index + 1}` : index + 1}. ${track.name}`}
+          </div>
         </Title>
         <div className="audio">
-          <audio ref={audioRef} preload="auto">
-            <source
-              src="https://dl.dropbox.com/s/oswkgcw749xc8xs/The-Noisy-Freaks.mp3?dl=1"
-              type="audio/mp3"
-            />
-            <source
-              src="https://dl.dropbox.com/s/75jpngrgnavyu7f/The-Noisy-Freaks.ogg?dl=1"
-              type="audio/ogg"
-            />
+          <audio ref={audioRef}>
+            <source src={track.url} />
           </audio>
 
           <div className="controls">

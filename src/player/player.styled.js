@@ -159,10 +159,4 @@ const Title = styled.div`
   }
 `;
 
-const Button = styled.button`
-  background-color: transparent;
-  outline: none;
-  border: none;
-`;
-
-export { StylePlayer, Image, AudioPlayer, Title, Button };
+export { StylePlayer, Image, AudioPlayer, Title };
