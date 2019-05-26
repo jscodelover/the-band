@@ -9,16 +9,6 @@ function Player(props) {
   let audioRef = useRef();
   let sliderRef = useRef();
 
-  const handleMusicPlay = option => {
-    if (option === "play") {
-      setMusic("pause");
-      audioRef.current.play();
-    } else {
-      setMusic("play");
-      audioRef.current.pause();
-    }
-  };
-
   useEffect(() => {
     audioRef.current.currentTime = 0;
     audioRef.current.load();
@@ -41,9 +31,28 @@ function Player(props) {
     };
   }, []);
 
+  const handleMusicPlay = option => {
+    if (option === "play") {
+      setMusic("pause");
+      audioRef.current.play();
+    } else {
+      setMusic("play");
+      audioRef.current.pause();
+    }
+  };
+
+  const changeSong = option => {
+    if (option === "previous" && index !== 0) {
+      props.changeTrack(props.currentAlbum.tracks[index - 1].id);
+    } else if (option === "next" && index !== props.currentAlbum.tracks.length - 1) {
+      props.changeTrack(props.currentAlbum.tracks[index + 1].id);
+    }
+  };
+
   const { trackId, currentAlbum } = props;
   const index = currentAlbum.tracks.findIndex(track => track.id === trackId);
   const track = currentAlbum.tracks[index];
+
   return (
     <StylePlayer>
       <Image>
@@ -63,7 +72,7 @@ function Player(props) {
           </audio>
 
           <div className="controls">
-            <Button>
+            <Button onClick={() => changeSong("previous")}>
               <svg className="step-backward" width="38" height="38" viewBox="0 0 25 25">
                 <g>
                   <polygon points="4.9,4.3 9,4.3 9,11.6 21.4,4.3 21.4,20.7 9,13.4 9,20.7 4.9,20.7" />
@@ -97,7 +106,7 @@ function Player(props) {
               </Button>
             )}
 
-            <Button>
+            <Button onClick={() => changeSong("next")}>
               <svg className="step-foreward" width="38" height="38" viewBox="0 0 25 25">
                 <g>
                   <polygon points="20.7,4.3 16.6,4.3 16.6,11.6 4.3,4.3 4.3,20.7 16.7,13.4 16.6,20.7 20.7,20.7" />

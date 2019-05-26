@@ -4,7 +4,6 @@
   - Reactjs
   - Redux
   - Styled Components
-  - MusicMatch Api
 
 ## Scripts
 

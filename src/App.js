@@ -18,7 +18,11 @@ function App(props) {
           <Header
             track={props.currentAlbum.tracks.find(track => track.id === props.currentTrack)}
           />
-          <Player trackId={props.currentTrack} currentAlbum={props.currentAlbum} />
+          <Player
+            trackId={props.currentTrack}
+            currentAlbum={props.currentAlbum}
+            changeTrack={id => props.getCurrentTrack(id)}
+          />
           <Track
             changeAlbum={id => props.getCurrentAlbum(id)}
             trackId={props.currentTrack}

@@ -6,9 +6,9 @@ const StyleHeader = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  padding: 0px 10%;
+  padding: 0px 140px;
   padding-top: 67px;
-  height: 85vh;
+  height: 80vh;
   box-sizing: content-box;
   background-color: ${theme.colors.primaryColor};
   text-align: center;
@@ -23,7 +23,7 @@ const Image = styled.div`
   position: relative;
   height: 100%;
   .image {
-    height: 86.5vh;
+    height: 81.2vh;
     @media (max-width: 568px) {
       height: 56vh;
     }
@@ -84,7 +84,7 @@ const Text = styled.div`
   }
 
   @media (max-width: 998px) {
-    margin-bottom: 43px;
+    margin-bottom: 20px;
   }
 `;
 
